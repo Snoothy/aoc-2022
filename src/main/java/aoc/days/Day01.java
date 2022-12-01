@@ -15,24 +15,35 @@ public class Day01 {
     public static String solvePart1() throws Exception {
         init();
         int counter = 0;
-
+        int max = 0;
+        
         for (int i = 0; i < sonar.length - 1; i++) {
-            if (sonar[i + 1] - sonar[i] > 0) {
-                counter++;
+            if (sonar[i] == -1) { 
+                if (counter >= max) {
+                    max = counter;
+                    
+                }
+                System.out.println(counter);
+                counter = 0;
+                
+            } else {
+                counter += sonar[i];
             }
+
+            
         }
-        return Integer.toString(counter);
+
+        if (counter > max) {
+            max = counter;
+        }
+        
+        return Integer.toString(max);
     }
 
     public static String solvePart2() throws Exception {
         init();
         int counter = 0;
-
-        for (int i = 0; i < sonar.length - 3; i++) {
-            if (sonar[i + 3] - sonar[i] > 0) {
-                counter++;
-            }
-        }
+        // Sort output from part 1 and sum highest 3
         return Integer.toString(counter);
     }
 }

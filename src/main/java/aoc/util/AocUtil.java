@@ -27,10 +27,15 @@ public final class AocUtil {
         Path path = readFile(filename);
 
         try (final Stream<String> lines = Files.lines(path)) {
-            return lines.mapToInt(Integer::parseInt).toArray();
+            return lines.mapToInt(s -> getInt(s)).toArray();
         }
     }
 
+    private static int getInt(String s){
+        if (s == null || "".equals(s)) return -1;
+
+        return Integer.parseInt(s);
+    }
     private static Path readFile(String filename) throws FileNotFoundException, URISyntaxException {
         URL url = AocUtil.class.getClassLoader().getResource(filename);
         if (url == null) {
