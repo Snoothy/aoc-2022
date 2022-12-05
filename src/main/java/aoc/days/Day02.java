@@ -1,8 +1,8 @@
 package aoc.days;
 
-import java.util.List;
-
 import aoc.util.AocUtil;
+
+import java.util.List;
 
 public class Day02 {
 
@@ -49,7 +49,6 @@ public class Day02 {
             default:
                 break;
         }
-        System.out.println("game score " + result);
         return result;
     }
 
@@ -73,7 +72,6 @@ public class Day02 {
         if ("Y".equals(inplayer)) player = getHandDraw(opp);
         if ("Z".equals(inplayer)) player = getHandWin(opp);
 
-        System.out.println(opp + " | " + player);
         if (("A".equals(opp) && "X".equals(player)) || ("B".equals(opp) && "Y".equals(player)) || ("C".equals(opp) && "Z".equals(player))){
             result += 3;
         } else if (("A".equals(opp) && "Y".equals(player)) || ("B".equals(opp) && "Z".equals(player)) || ("C".equals(opp) && "X".equals(player))) {
@@ -93,7 +91,6 @@ public class Day02 {
             default:
                 break;
         }
-        System.out.println("game score " + result);
         return result;
     }
 
