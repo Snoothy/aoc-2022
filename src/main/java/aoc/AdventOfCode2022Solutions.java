@@ -1,8 +1,6 @@
 package aoc;
 
-import aoc.days.Day01;
-import aoc.days.Day02;
-import aoc.days.Day03;
+import aoc.days.*;
 
 public class AdventOfCode2022Solutions {
     public static void main(String[] args) {
@@ -24,5 +22,9 @@ public class AdventOfCode2022Solutions {
         System.out.println(" > Solution 2 to day 02: " + Day02.solvePart2());
 
         new Day03().solve();
+        new Day04().solve();
+        new Day05().solve();
+        new Day06().solve();
+        new Day07().solve();
     }
 }
