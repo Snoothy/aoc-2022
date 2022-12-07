@@ -1,6 +1,6 @@
 package aoc.days;
 
-import java.util.List;
+import java.util.HashSet;
 
 public class Day06 extends Day {
     @Override
@@ -10,17 +10,36 @@ public class Day06 extends Day {
 
     @Override
     Object solvePart1() {
-        List<String> lines = getLines();
+        String str = getLines().get(0);
+        int result = 0;
+        for(int i = 0; i < str.length(); i++){
+            if (isMarker(str.substring(i, i+4))) {
+                return i+4;
+            };
+        }
 
-        return null;
+        return 0;
+    }
+
+    private boolean isMarker(String str){
+        HashSet<Character> set = new HashSet<>();
+        for (char c : str.toCharArray()) {
+            set.add(c);
+        }
+        return set.size() == str.length();
     }
 
     @Override
     Object solvePart2() {
-        List<String> lines = getLines();
-        int sum = 0;
+        String str = getLines().get(0);
+        int result = 0;
+        for(int i = 0; i < str.length(); i++){
+            if (isMarker(str.substring(i, i+14))) {
+                return i+14;
+            };
+        }
 
-        return sum;
+        return 0;
     }
 
 
